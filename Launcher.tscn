@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://Launcher.gd" type="Script" id=1]
+
+[node name="Launcher" type="Node2D"]
+
+script/script = ExtResource( 1 )
+launch_pos = Vector2( 540, 960 )
+balls = 40
+balls_to_shoot = 0
+shoot_delay = 0.05
+
+

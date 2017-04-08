@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Launcher.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 980 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 540, 50 )
+
+[node name="Game" type="Node2D"]
+
+[node name="Brick" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 932, 732 )
+hp = 10
+
+[node name="Brick1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 572, 732 )
+hp = 10
+
+[node name="Brick2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 752, 732 )
+hp = 10
+
+[node name="Brick3" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 932, 432 )
+hp = 10
+
+[node name="Brick4" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 212, 732 )
+hp = 10
+
+[node name="Brick5" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 572, 632 )
+hp = 10
+
+[node name="Brick6" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 32, 732 )
+hp = 10
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.999998, 0.00174533, -0.00174533, 0.999998, -10, 960 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 1 )
+shapes/1/transform = Matrix32( 0.999998, 0.00174533, -0.00174533, 0.999998, 1090, 960 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 2 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 543, 53 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+
+transform/pos = Vector2( -10, 960 )
+transform/rot = -0.1
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+
+transform/pos = Vector2( 1090, 960 )
+transform/rot = -0.1
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D 2" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+
+transform/pos = Vector2( 543, 53 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 2
+
+[node name="Label" type="Label" parent="."]
+
+rect/scale = Vector2( 4, 4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 79.0
+margin/bottom = 14.0
+text = "Score:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label2" type="Label" parent="."]
+
+rect/scale = Vector2( 4, 4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 180.0
+margin/top = 0.0
+margin/right = 259.0
+margin/bottom = 14.0
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="."]
+
+rect/scale = Vector2( 4, 4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 720.0
+margin/top = 0.0
+margin/right = 799.0
+margin/bottom = 14.0
+text = "Global value"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Launcher" parent="." instance=ExtResource( 2 )]
+
+balls = 1
+shoot_delay = 0.08
+
+
