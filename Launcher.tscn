@@ -6,7 +6,7 @@
 
 script/script = ExtResource( 1 )
 launch_pos = Vector2( 540, 960 )
-balls = 40
+balls = 1
 balls_to_shoot = 0
 shoot_delay = 0.05
 

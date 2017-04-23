@@ -1,13 +1,13 @@
-extends RigidBody2D
+extends Node2D
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-onready var game = get_node("../")
 
 func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
 	pass
 
 func _on_Ball_body_enter( body ):
-	if body.has_method("hit"):
-		body.hit()
+	print("asdasd BODY")

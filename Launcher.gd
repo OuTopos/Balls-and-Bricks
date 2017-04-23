@@ -12,8 +12,8 @@ var input_start = Vector2(0, 0)
 var input_end = Vector2(0, 0)
 var input_dragging = false
 
-onready var input_start_sprite = get_node("Sprite")
-onready var direction_sprite = get_node("Sprite1")
+#onready var input_start_sprite = get_node("Sprite")
+#onready var direction_sprite = get_node("Sprite1")
 
 func _ready():
 	set_fixed_process(true)
@@ -26,6 +26,7 @@ func _fixed_process(delta):
 			shoot_timer -= shoot_delay
 			shoot()
 			balls_to_shoot -= 1
+			print(balls_to_shoot)
 	else:
 		shoot_timer = 0
 
